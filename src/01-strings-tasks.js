@@ -210,12 +210,13 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-  let arr=[]
- for(let i = 1; i < width;i++){
-  arr.push('_');
+  let start = `┌${'─'.repeat(width-2)}┐\n`;
+  let body = `│${' '.repeat(width-2)}│\n`;
+  let footer = `└${'─'.repeat(width-2)}┘\n`;
+  return start + body.repeat(height-2) + footer;
 }
-return arr.join('')
-}
+
+
 /**
  * Encode specified string with ROT13 cipher
  * See details:  https://en.wikipedia.org/wiki/ROT13
@@ -284,8 +285,12 @@ function isString(value) {
  *   'Q♠' => 50
  *   'K♠' => 51
  */
-function getCardId(/* value */) {
-  throw new Error('Not implemented');
+function getCardId(value) {
+  let arr = ['A♣','2♣','3♣','4♣','5♣','6♣','7♣','8♣','9♣','10♣','J♣','Q♣','K♣',
+   'A♦','2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','Q♦','K♦',
+   'A♥','2♥','3♥','4♥','5♥','6♥','7♥','8♥','9♥','10♥','J♥','Q♥','K♥',
+    'A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','Q♠','K♠'];
+    return arr.indexOf(value);
 }
 
 
