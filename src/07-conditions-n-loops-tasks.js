@@ -55,8 +55,7 @@ function getFizzBuzz(num) {
  *   10 => 3628800
  */
 function getFactorial(n) {
-  return (n != 1) ? n * getFactorial(n - 1) : 1;
-
+  return (n !== 1) ? n * getFactorial(n - 1) : 1;
 }
 
 
