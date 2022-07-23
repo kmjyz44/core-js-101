@@ -112,11 +112,8 @@ function removeLeadingAndTrailingWhitespaces(value) {
  *   'cat', 3 => 'catcatcat'
  */
 function repeatString(value, count) {
-  const arr = [];
-  for (let i = 0; i < count; i++) {
-    arr.push(value);
-  }
-  return arr.join('');
+  // eslint-disable-next-line no-unused-vars
+  return (Array.from({ length: count }, (v, i) => value)).join('');
 }
 
 /**
@@ -250,7 +247,7 @@ function encodeToRot13(str) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-  if (Object.prototype.toString.call(value) == '[object String]') {
+  if (Object.prototype.toString.call(value) === '[object String]') {
     return true;
   }
 
