@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 /* *************************************************************************************************
  *                                                                                                *
  * Please read the following tutorial before implementing tasks:                                   *
@@ -71,8 +72,13 @@ function getFactorial(n) {
  *   5,10  =>  45 ( = 5+6+7+8+9+10 )
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
-function getSumBetweenNumbers(/* n1, n2 */) {
-  throw new Error('Not implemented');
+function getSumBetweenNumbers(n1, n2) {
+  let sum = 0;
+  // eslint-disable-next-line keyword-spacing
+  for(let i = n1; i <= n2; i++) {
+    sum += i;
+  }
+  return sum;
 }
 
 
